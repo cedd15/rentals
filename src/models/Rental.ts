@@ -1,4 +1,4 @@
-interface Rental {
+export interface Rental {
     id?: string
     house_number: string
     address_1: string
