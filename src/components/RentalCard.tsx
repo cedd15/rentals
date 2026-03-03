@@ -1,16 +1,19 @@
 import type { Rental } from "../models/Rental";
 
 interface Prop {
-    rental: Rental
+    rentals: Rental[]
 }
 
-function RentalCard({ rental } : Prop) {
-    return(
+function RentalCard({ rentals } : Prop) {return(
         <div className="rentalCard">
-            <span>`${rental.monthly} /mo`</span>
-            <span>`${rental.city}, ${rental.provice}`</span>
-            <p>`${rental.house_number} ${rental.address_1} ${rental.address_2} ${rental.barangay}`</p>
-            <p>`${rental.description}`</p>
+            {rentals.map(rental => (
+                <div>
+                    <h4>{`${rental.monthly} /mo`}</h4>
+                    <h5>{`${rental.city}, ${rental.provice}`}</h5>
+                    <p>{`${rental.house_number} ${rental.address_1}, ${rental.address_2}, ${rental.barangay}`}</p>
+                    <p>{`${rental.description}`}</p>
+                </div>
+            ))}
         </div>
     )
 }
