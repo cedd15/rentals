@@ -1,5 +1,7 @@
 .navbar {
     background-color: #30364F;
+    position: sticky;
+    top: 0;
 }
 
 .navbar ul {

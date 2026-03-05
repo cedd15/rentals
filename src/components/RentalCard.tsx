@@ -10,10 +10,10 @@ function RentalCard({ rentals } : Prop) {return(
             {rentals.map(rental => (
                 <div className="rentalCard">
                     <h4>{`${rental.monthly} /mo`}</h4>
-                    <h5>{`${rental.city}, ${rental.provice}`}</h5>
+                    <h4>{`${rental.city}, ${rental.provice}`}</h4>
                     <p>{`${rental.house_number} ${rental.address_1}`}</p>
                     {rental.address_2 && <p>{rental.address_2}</p>}
-                    <p>{`Barangay:${rental.barangay}`}</p>
+                    <p>{`Barangay ${rental.barangay}`}</p>
                     <p>{`${rental.description}`}</p>
                 </div>
             ))}
