@@ -1,7 +1,13 @@
 .navbar {
-    background-color: #30364F;
+    border-bottom: 1px solid black;
     position: sticky;
     top: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: #F0F0DB;
+    color: #30364F;
+    padding: 20px 0;
+    z-index: 1;
 }
 
 .navbar ul {
@@ -10,9 +16,19 @@
     align-items: center;
 }
 
-.navbar li {
+.navbar ul li {
     list-style: none;
-    font-size: 1.5rem;
-    padding: 20px 0;
-    color: white;
+    font-size: 1.5em;
+}
+
+.navbar ul li a {
+    color: #30364F;
+}
+
+.navbar ul li a:hover {
+    color: blue;
+}
+
+.navbar ul li a:active {
+    color: red;
 }

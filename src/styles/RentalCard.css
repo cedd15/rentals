@@ -1,13 +1,16 @@
-.rentals {
+.rental-card-wrapper {
     display: flex;
-    justify-content: center;
-    justify-content: center;
-    margin: 20px 0;
+    flex-wrap: wrap;
+    
+    margin-top: 20px;
 }
 
-.rentalCard {
-    padding: 20px;
-    margin: 0 20px;
-    border: 1px solid black;
-    border-radius: 10px;
+.rental-card {
+    padding: 10px;
+    margin: 10px;
+    border: solid 1px white;
+    border-radius: 5px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
 }

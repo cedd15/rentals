@@ -1,14 +1,14 @@
 import type { Rental } from "../models/Rental";
-import '../styles/RentalCard.css'
+import "../styles/RentalCard.css"
 
 interface Prop {
     rentals: Rental[]
 }
 
 function RentalCard({ rentals } : Prop) {return(
-        <div className="rentals">
+        <div className="rental-card-wrapper">
             {rentals.map(rental => (
-                <div className="rentalCard">
+                <div className="rental-card">
                     <h4>{`${rental.monthly} /mo`}</h4>
                     <h4>{`${rental.city}, ${rental.provice}`}</h4>
                     <p>{`${rental.house_number} ${rental.address_1}`}</p>

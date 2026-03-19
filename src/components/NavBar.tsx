@@ -4,8 +4,8 @@ function NavBar() {
     return (
         <div className="navbar">
             <ul>
-                <li>Home</li>
-                <li>Saved</li>
+                <li><a>Home</a></li>
+                <li><a>Saved</a></li>
             </ul>
         </div>
     )
