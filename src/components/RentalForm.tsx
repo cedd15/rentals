@@ -9,6 +9,7 @@ interface Prop {
 function RentalForm({setRentals} : Prop) {
     const [showForm, setShowForm] = useState<boolean>(false);
     const [formData, setFormData] = useState<Rental>({
+        id: crypto.randomUUID(),
         house_number: "",
         address_1: "",
         address_2: "",
@@ -16,7 +17,8 @@ function RentalForm({setRentals} : Prop) {
         city: "",
         province: "",
         monthly: 0,
-        description: ""
+        description: "",
+        isFave: false
     })
 
     const handleSubmit = (e : React.SubmitEvent) => {

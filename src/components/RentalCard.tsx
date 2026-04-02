@@ -1,26 +1,27 @@
 import type { Rental } from "../models/Rental";
 import "../styles/RentalCard.css"
-import { FaCheck } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
 import { IoIosAdd } from "react-icons/io";
-import { IoClose } from "react-icons/io5";
+import { MdDeleteOutline } from "react-icons/md";
 
 interface Prop {
-    rentals: Rental[]
+    rentals: Rental[],
+    onToggleFave: (id : string) => void
+    onDelete: (id : string) => void
 }
 
-function RentalCard({ rentals } : Prop) {return(
+function RentalCard({ rentals, onToggleFave, onDelete } : Prop) {
+
+    return(
         <div className="rental-card-wrapper">
-            {rentals.map((rental, i) => (
-                <div className="rental-card" key={i}>
+            {rentals.map(rental => (
+                <div className="rental-card" key={rental.id}>
                     <div className="rental-btns">
-                        <button>
-                            <FaCheck />
+                        <button onClick={() => onToggleFave(rental.id)}>
+                            {rental.isFave ? <FaRegHeart /> : <IoIosAdd />}
                         </button>
-                        <button>
-                            <IoIosAdd />
-                        </button>
-                        <button>
-                            <IoClose />
+                        <button onClick={() => onDelete(rental.id)}>
+                            <MdDeleteOutline />
                         </button>
                     </div>
                     <div className="rental-item">
