@@ -6,7 +6,7 @@ import { MdDeleteOutline } from "react-icons/md";
 
 interface Prop {
     rentals: Rental[],
-    onToggleFave: (id : string) => void
+    onToggleFave: (rental : Rental) => void
     onDelete: (id : string) => void
 }
 
@@ -17,7 +17,7 @@ function RentalCard({ rentals, onToggleFave, onDelete } : Prop) {
             {rentals.map(rental => (
                 <div className="rental-card" key={rental.id}>
                     <div className="rental-btns">
-                        <button onClick={() => onToggleFave(rental.id)}>
+                        <button onClick={() => onToggleFave(rental)}>
                             {rental.isFave ? <FaRegHeart /> : <IoIosAdd />}
                         </button>
                         <button onClick={() => onDelete(rental.id)}>

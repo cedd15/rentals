@@ -27,5 +27,5 @@
 
 .active-link {
   border-radius: 5px;
-  border: 1px dotted red;
+  text-decoration: underline red;
 }

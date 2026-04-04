@@ -3,6 +3,7 @@ import RentalCard from "./RentalCard";
 import RentalForm from "./RentalForm";
 import "../styles/Rentals.css"
 import { useState } from "react";
+import { useSaved } from "./customHooks";
 
 function Rentals() {
     const [rentals, setRentals] = useState<Rental[]>([
@@ -44,14 +45,18 @@ function Rentals() {
         }
     ])
 
-    const toggleFave = (id: string) => {
+    const { toggleSave } = useSaved();
+
+    const toggleFave = (rental : Rental) => {
         setRentals((prevItems) =>
             prevItems.map((item) =>
-                item.id === id
+                item.id === rental.id
                     ? { ...item, isFave: !item.isFave }
                     : item
             )
         );
+
+        toggleSave({...rental, isFave: true});
     };
 
     const deleteItem = (id : string) => {
