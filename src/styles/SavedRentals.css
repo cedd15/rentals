@@ -1,3 +1,13 @@
+.saved-rentals {
+    position: relative;
+}
+
+.logout {
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+
 .no-saved {
     display: flex;
     justify-content: center;
